@@ -15,25 +15,30 @@
     Show Quantity
   </button>
   <button onclick="
-    cartQuantity = cartQuantity + 1;
-    console.log(`Cart Quantity: ${cartQuantity}`);
+    cartQuantity++;
+    console.log('Cart updated!');
+    console.log(`Cart Quantity: ${cartQuantity}`)
     ">Add to Cart
   </button>
   <button onclick="
-    cartQuantity = cartQuantity + 2;
-    console.log(`Cart Quantity after +2: ${cartQuantity}`);
+    cartQuantity += 2;
+    console.log('Cart updated!');
+    console.log(`Cart Quantity: ${cartQuantity}`)
     ">+2</button>
   <button onclick="
-    cartQuantity = cartQuantity + 3;
-    console.log(`Cart Quantity after +3: ${cartQuantity}`)
+    cartQuantity += 3;
+    console.log('Cart updated!');
+    console.log(`Cart Quantity: ${cartQuantity}`)
     ">+3</button>
   <button onclick="
-    cartQuantity = cartQuantity - 1;
-    console.log(`Cart Quantity after -1: ${cartQuantity}`)
+    cartQuantity--;
+    console.log('Cart updated!');
+    console.log(`Cart Quantity: ${cartQuantity}`)
     ">-1</button>
   <button onclick="
     cartQuantity = 0;
-    console.log(`Cart Resetted to ${cartQuantity}`);
+    console.log('Cart was reset');
+    console.log(`Cart Quantity: ${cartQuantity}`);
     ">Reset Cart</button>
 
   <script>
