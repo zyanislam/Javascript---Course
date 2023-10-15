@@ -15,7 +15,7 @@
   <br>
   <br>
   <button onclick="
-    pickCompMove();
+    const compMove = pickCompMove();
 
     let result = '';
     if(compMove === 'rock'){
@@ -69,6 +69,7 @@
     function pickCompMove(){
       const rNumber = Math.round(Math.random()*10);
       let compMove = '';
+
       if(rNumber <= 3){
         compMove = 'rock';
       }
@@ -78,6 +79,7 @@
       else{
         compMove = 'scissors';
       }
+      return compMove;
     }
   </script>
 </body>
