@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <h2>
+    Rock Paper Scissors Game
+  </h2>
+  <p>
+    Let's play!
+  </p>
+  <br>
+  <br>
+  <button onclick="
+    const rNumber = Math.round(Math.random()*10);
+
+    let compMove = '';
+    if(rNumber <= 3){
+      compMove = 'rock';
+    }
+    else if(rNumber > 3 && rNumber <= 6){
+      compMove = 'paper';
+    }
+    else{
+      compMove = 'scissors';
+    }
+
+    let result = '';
+    if(compMove === 'rock'){
+      result = 'It\'s a Draw!';
+    }
+    else if(compMove === 'paper'){
+      result = 'Sorry, You Lose!';
+    }
+    else if(compMove === 'scissors'){
+      result = 'Congrats, You Win!';
+    }
+
+    alert(`Your move was Rock! Player 2 chose ${compMove}.\n${result}`);
+  ">Rock</button>
+
+  <button onclick="
+    const rNumber = Math.round(Math.random()*10);
+
+    let compMove = '';
+    if(rNumber <= 3){
+      compMove = 'rock';
+    }
+    else if(rNumber > 3 && rNumber <= 6){
+      compMove = 'paper';
+    }
+    else{
+      compMove = 'scissors';
+    }
+
+    let result = '';
+    if(compMove === 'rock'){
+      result = 'Congrats, You Win!';
+    }
+    else if(compMove === 'paper'){
+      result = 'It\'s a Draw!';
+    }
+    else if(compMove === 'scissors'){
+      result = 'Sorry, You Lose!';
+    }
+
+    alert(`Your move was Paper! Player 2 chose ${compMove}.\n${result}`);
+  ">Paper</button>
+  
+  <button onclick="
+    const rNumber = Math.round(Math.random()*10);
+
+    let compMove = '';
+    if(rNumber <= 3){
+      compMove = 'rock';
+    }
+    else if(rNumber > 3 && rNumber <= 6){
+      compMove = 'paper';
+    }
+    else{
+      compMove = 'scissors';
+    }
+
+    let result = '';
+    if(compMove === 'rock'){
+      result = 'Sorry, You Lose!';
+    }
+    else if(compMove === 'paper'){
+      result = 'Congrats, You Win!';
+    }
+    else if(compMove === 'scissors'){
+      result = 'It\'s a Draw!';
+    }
+
+    alert(`Your move was Scissors! Player 2 chose ${compMove}.\n${result}`);
+  ">Scissors</button>
+
+  <script>
+
+  </script>
+</body>
+</html>
