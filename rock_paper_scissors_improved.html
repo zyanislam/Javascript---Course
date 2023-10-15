@@ -49,23 +49,26 @@
   ">Paper</button>
   
   <button onclick="
-    const compMove = pickCompMove();
-
-    let result = '';
-    if(compMove === 'Rock'){
-      result = 'Sorry, You Lose!';
-    }
-    else if(compMove === 'Paper'){
-      result = 'Congrats, You Win!';
-    }
-    else if(compMove === 'Scissors'){
-      result = 'It\'s a Draw!';
-    }
-
+    playGame('Scissors');
     alert(`Your move was Scissors! Player 2 chose ${compMove}.\n${result}`);
   ">Scissors</button>
 
   <script>
+    function playGame(playerMove){
+      const compMove = pickCompMove();
+
+      let result = '';
+      if(compMove === 'Rock'){
+        result = 'Sorry, You Lose!';
+      }
+      else if(compMove === 'Paper'){
+        result = 'Congrats, You Win!';
+      }
+      else if(compMove === 'Scissors'){
+        result = 'It\'s a Draw!';
+      }
+    }
+
     function pickCompMove(){
       const rNumber = Math.round(Math.random()*10);
       let compMove = '';
