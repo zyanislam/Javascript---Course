@@ -9,7 +9,7 @@
   <h2>This is an example page for Functions</h2>
   <script>
     function interestCal(payment, percen){
-      const inter = (payment * percen)
+      const inter = (payment * (percen/100));
       return inter;
     }
     payment = prompt('Enter payment');
