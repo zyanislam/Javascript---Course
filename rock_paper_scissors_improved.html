@@ -15,37 +15,11 @@
   <br>
   <br>
   <button onclick="
-    const compMove = pickCompMove();
-
-    let result = '';
-    if(compMove === 'Rock'){
-      result = 'It\'s a Draw!';
-    }
-    else if(compMove === 'Paper'){
-      result = 'Sorry, You Lose!';
-    }
-    else if(compMove === 'Scissors'){
-      result = 'Congrats, You Win!';
-    }
-
-    alert(`Your move was Rock! Player 2 chose ${compMove}.\n${result}`);
+    playGame('Rock');
   ">Rock</button>
 
   <button onclick="
-    const compMove = pickCompMove();
-
-    let result = '';
-    if(compMove === 'Rock'){
-      result = 'Congrats, You Win!';
-    }
-    else if(compMove === 'Paper'){
-      result = 'It\'s a Draw!';
-    }
-    else if(compMove === 'Scissors'){
-      result = 'Sorry, You Lose!';
-    }
-
-    alert(`Your move was Paper! Player 2 chose ${compMove}.\n${result}`);
+    playGame('Paper');
   ">Paper</button>
   
   <button onclick="
@@ -59,8 +33,32 @@
 
       let result = '';
 
-      if(playerMove === 'Scissors')
+      if(playerMove === 'Rock')
       {
+        if(compMove === 'Rock'){
+        result = 'It\'s a Draw!';
+        }
+        else if(compMove === 'Paper'){
+          result = 'Sorry, You Lose!';
+        }
+        else if(compMove === 'Scissors'){
+          result = 'Congrats, You Win!';
+        }
+      }
+
+      else if(playerMove === 'Scissors')
+      {
+        if(compMove === 'Rock'){
+        result = 'Sorry, You Lose!';
+        }
+        else if(compMove === 'Paper'){
+          result = 'Congrats, You Win!';
+        }
+        else if(compMove === 'Scissors'){
+          result = 'It\'s a Draw!';
+        }
+      }
+      else if(playerMove === 'Scissors'){
         if(compMove === 'Rock'){
         result = 'Sorry, You Lose!';
         }
