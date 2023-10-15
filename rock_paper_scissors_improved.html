@@ -18,13 +18,13 @@
     const compMove = pickCompMove();
 
     let result = '';
-    if(compMove === 'rock'){
+    if(compMove === 'Rock'){
       result = 'It\'s a Draw!';
     }
-    else if(compMove === 'paper'){
+    else if(compMove === 'Paper'){
       result = 'Sorry, You Lose!';
     }
-    else if(compMove === 'scissors'){
+    else if(compMove === 'Scissors'){
       result = 'Congrats, You Win!';
     }
 
@@ -32,16 +32,16 @@
   ">Rock</button>
 
   <button onclick="
-    pickCompMove();
+    const compMove = pickCompMove();
 
     let result = '';
-    if(compMove === 'rock'){
+    if(compMove === 'Rock'){
       result = 'Congrats, You Win!';
     }
-    else if(compMove === 'paper'){
+    else if(compMove === 'Paper'){
       result = 'It\'s a Draw!';
     }
-    else if(compMove === 'scissors'){
+    else if(compMove === 'Scissors'){
       result = 'Sorry, You Lose!';
     }
 
@@ -49,16 +49,16 @@
   ">Paper</button>
   
   <button onclick="
-    pickCompMove();
+    const compMove = pickCompMove();
 
     let result = '';
-    if(compMove === 'rock'){
+    if(compMove === 'Rock'){
       result = 'Sorry, You Lose!';
     }
-    else if(compMove === 'paper'){
+    else if(compMove === 'Paper'){
       result = 'Congrats, You Win!';
     }
-    else if(compMove === 'scissors'){
+    else if(compMove === 'Scissors'){
       result = 'It\'s a Draw!';
     }
 
@@ -71,13 +71,13 @@
       let compMove = '';
 
       if(rNumber <= 3){
-        compMove = 'rock';
+        compMove = 'Rock';
       }
       else if(rNumber > 3 && rNumber <= 6){
-        compMove = 'paper';
+        compMove = 'Paper';
       }
       else{
-        compMove = 'scissors';
+        compMove = 'Scissors';
       }
       return compMove;
     }
