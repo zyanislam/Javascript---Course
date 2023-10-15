@@ -12,13 +12,13 @@
       name: 'socks',
       price: 1000,
       fun: function fun1(){
-        console.log('Function inside object!')
+        console.log('Function inside object!');
       }
     };
 
     console.log(product.name);
     console.log(product.price);
-    console.log(product.fun());
+    product.fun();
     console.log(product);
     console.log(JSON.stringify(product));
 
