@@ -16,15 +16,15 @@
   <br>
   <button onclick="
     const rNumber = Math.round(Math.random()*10);
-    let myMove;
+    const compMove = '';
     if(rNumber <= 3){
-      console.log('rock');
+      compMove = 'rock';
     }
-    else if(rNumber >3 && rNumber <=6){
-      console.log('paper');
+    else if(rNumber > 3 && rNumber <= 6){
+      compMove = 'paper';
     }
     else{
-      console.log('scissors');
+      compMove = 'scissors';
     }
   ">Rock</button>
   <button>Paper</button>
