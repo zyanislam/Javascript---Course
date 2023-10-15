@@ -8,7 +8,12 @@
 <body>
   <h2>This is an example page for Functions</h2>
   <script>
-    
+    function interestCal(payment){
+      const inter = (payment * 0.8)
+      return inter;
+    }
+    payment = prompt('Enter payment')
+    alert(interestCal(payment));
   </script>
 </body>
 </html>
