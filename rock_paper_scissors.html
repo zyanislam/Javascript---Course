@@ -16,7 +16,7 @@
   <br>
   <button onclick="
     const rNumber = Math.round(Math.random()*10);
-    const compMove = '';
+    let compMove = '';
     if(rNumber <= 3){
       compMove = 'rock';
     }
@@ -26,6 +26,17 @@
     else{
       compMove = 'scissors';
     }
+
+    if(compMove == 'rock'){
+      alert('It\'s a Draw!');
+    }
+    else if(compMove == 'paper'){
+      alert('Sorry, You Lose!')
+    }
+    else{
+      alert('Congrats, You Win!')
+    }
+
   ">Rock</button>
   <button>Paper</button>
   <button>Scissors</button>
