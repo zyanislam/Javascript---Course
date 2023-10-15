@@ -15,18 +15,7 @@
   <br>
   <br>
   <button onclick="
-    const rNumber = Math.round(Math.random()*10);
-
-    let compMove = '';
-    if(rNumber <= 3){
-      compMove = 'rock';
-    }
-    else if(rNumber > 3 && rNumber <= 6){
-      compMove = 'paper';
-    }
-    else{
-      compMove = 'scissors';
-    }
+    pickCompMove();
 
     let result = '';
     if(compMove === 'rock'){
@@ -43,18 +32,7 @@
   ">Rock</button>
 
   <button onclick="
-    const rNumber = Math.round(Math.random()*10);
-
-    let compMove = '';
-    if(rNumber <= 3){
-      compMove = 'rock';
-    }
-    else if(rNumber > 3 && rNumber <= 6){
-      compMove = 'paper';
-    }
-    else{
-      compMove = 'scissors';
-    }
+    pickCompMove();
 
     let result = '';
     if(compMove === 'rock'){
@@ -71,18 +49,7 @@
   ">Paper</button>
   
   <button onclick="
-    const rNumber = Math.round(Math.random()*10);
-
-    let compMove = '';
-    if(rNumber <= 3){
-      compMove = 'rock';
-    }
-    else if(rNumber > 3 && rNumber <= 6){
-      compMove = 'paper';
-    }
-    else{
-      compMove = 'scissors';
-    }
+    pickCompMove();
 
     let result = '';
     if(compMove === 'rock'){
@@ -99,7 +66,19 @@
   ">Scissors</button>
 
   <script>
-
+    function pickCompMove(){
+      const rNumber = Math.round(Math.random()*10);
+      let compMove = '';
+      if(rNumber <= 3){
+        compMove = 'rock';
+      }
+      else if(rNumber > 3 && rNumber <= 6){
+        compMove = 'paper';
+      }
+      else{
+        compMove = 'scissors';
+      }
+    }
   </script>
 </body>
 </html>
