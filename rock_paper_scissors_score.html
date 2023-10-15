@@ -24,17 +24,21 @@
   
   <button onclick="
     playGame('Scissors');
-    
   ">Scissors</button>
 
+  <button onclick="
+    resetScore();
+  ">Reset Score</button>
+
   <script>
+    const score = {
+      win: 0,
+      lose: 0,
+      draw: 0
+    };
+
     function playGame(playerMove){
       const compMove = pickCompMove();
-      let score = {
-        win: 0,
-        lose = 0,
-        draw = 0
-      };
 
       let result = '';
 
@@ -75,6 +79,17 @@
         }
       }
 
+
+      if(result === 'Congrats, You Win!'){
+        score.win++;
+      }
+      else if(result === 'Sorry, You Lose!'){
+        score.lose++;
+      }
+      else if(result === 'It\'s a Draw!'){
+        score.draw++;
+      }
+
       alert(`Your move was ${playerMove}! Player 2 chose ${compMove}.\n${result}\nWins: ${score.win} Loses:${score.lose} Draws:${score.draw}`);
     }
 
@@ -92,6 +107,14 @@
         compMove = 'Scissors';
       }
       return compMove;
+    }
+
+    function resetScore(){
+      score = {
+        win: 0,
+        lose: 0,
+        draw: 0
+      };
     }
   </script>
 </body>
