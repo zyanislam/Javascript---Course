@@ -36,7 +36,7 @@
       if(playerMove === 'Rock')
       {
         if(compMove === 'Rock'){
-        result = 'It\'s a Draw!';
+          result = 'It\'s a Draw!';
         }
         else if(compMove === 'Paper'){
           result = 'Sorry, You Lose!';
@@ -46,21 +46,21 @@
         }
       }
 
-      else if(playerMove === 'Scissors')
+      else if(playerMove === 'Paper')
       {
         if(compMove === 'Rock'){
-        result = 'Sorry, You Lose!';
-        }
-        else if(compMove === 'Paper'){
           result = 'Congrats, You Win!';
         }
-        else if(compMove === 'Scissors'){
+        else if(compMove === 'Paper'){
           result = 'It\'s a Draw!';
+        }
+        else if(compMove === 'Scissors'){
+          result = 'Sorry, You Lose!';
         }
       }
       else if(playerMove === 'Scissors'){
         if(compMove === 'Rock'){
-        result = 'Sorry, You Lose!';
+          result = 'Sorry, You Lose!';
         }
         else if(compMove === 'Paper'){
           result = 'Congrats, You Win!';
