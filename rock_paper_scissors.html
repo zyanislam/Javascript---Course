@@ -40,9 +40,34 @@
     }
 
     alert(`Your move was Rock! Player 2 chose ${compMove}. ${result}`);
-
   ">Rock</button>
-  <button>Paper</button>
+  <button onclick="
+    const rNumber = Math.round(Math.random()*10);
+
+    let compMove = '';
+    if(rNumber <= 3){
+      compMove = 'rock';
+    }
+    else if(rNumber > 3 && rNumber <= 6){
+      compMove = 'paper';
+    }
+    else{
+      compMove = 'scissors';
+    }
+
+    let result = '';
+    if(compMove === 'rock'){
+      result = 'It\'s a Draw!';
+    }
+    else if(compMove === 'paper'){
+      result = 'Sorry, You Lose!';
+    }
+    else if(compMove === 'scissors'){
+      result = 'Congrats, You Win!';
+    }
+
+    alert(`Your move was Rock! Player 2 chose ${compMove}. ${result}`);
+  ">Paper</button>
   <button>Scissors</button>
 
   <script>
