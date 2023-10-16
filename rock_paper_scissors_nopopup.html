@@ -26,11 +26,14 @@
     playGame('Scissors');
   ">Scissors</button>
 
+  <p class="scoreText"></p>
+
   <button onclick="
     score.win = 0;
     score.lose = 0;
     score.draw = 0;
     localStorage.removeItem('score')
+    updateScore();
   ">Reset Score</button>
 
   <script>
@@ -43,6 +46,8 @@
         draw: 0
       }
     }
+
+    updateScore();
 
     function playGame(playerMove){
       const compMove = pickCompMove();
@@ -98,8 +103,14 @@
       }
 
       localStorage.setItem('score', JSON.stringify(score));
-      
-      alert(`Your move was ${playerMove}! Player 2 chose ${compMove}.\n${result}\nWins: ${score.win} Loses:${score.lose} Draws:${score.draw}`);
+      updateScore();
+
+      // alert(`Your move was ${playerMove}! Player 2 chose ${compMove}.\n${result}\nWins: ${score.win} Loses:${score.lose} Draws:${score.draw}`);
+    }
+
+    function updateScore(){
+      document.querySelector('.scoreText')
+      .innerHTML = `Wins: ${score.win} Loses:${score.lose} Draws:${score.draw}`;
     }
 
     function pickCompMove(){
