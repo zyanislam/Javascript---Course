@@ -36,7 +36,7 @@
   <script>
     let score = JSON.parse(localStorage.getItem('score'));
     
-    if(score === null){
+    if(!score){
       score = {
         win: 0,
         lose: 0,
