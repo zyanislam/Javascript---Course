@@ -24,13 +24,24 @@
   <p>Orders under <strong>$40</strong> = <strong>$10+</strong> for Shipping</p>
   <p>Orders over <strong>$40</strong> = Free Shipping</p>
 
-  <input class="inputValue" placeholder="Cost of Order" inputmode="numeric">
+  <input
+    class="inputValue"
+    placeholder="Cost of Order"
+    type="number"
+    onkeydown=
+    "
+      console.log(event.key);
+      if(event.key === 'Enter'){
+        console.log('he');
+      }
+    "
+  >
   <button onclick="
     calculateTotal();
     ">
     Calculate Cost
   </button>
-  <p class="costView"></p>
+  <h3 class="costView"></h3>
 
   <script>
     function changeText(){
@@ -45,18 +56,14 @@
 
     function calculateTotal(){
       const inputField = document.querySelector('.inputValue');
-      let cost = inputField.value;
-      console.log(typeof cost);
-      if(cost <= 40){
+      let cost = Number(inputField.value);
+      
+      if(cost < 40){
         cost = cost + 10;
-        console.log(cost);
-      }
-      else{
-        console.log(cost);
       }
 
       document.querySelector('.costView')
-      .innerHTML = `Your total cost is ${cost}.`;
+      .innerHTML = `Your total cost is $${cost}.`;
     }
   </script>
 </body>
