@@ -9,11 +9,12 @@
   <h2>DOM Page</h2>
   <button>Hello</button>
   <script>
-    console.log(document);
+    console.log(document.querySelector('button'));
+    document.querySelector('button').innerHTML = 'Changed';
+    // console.log(document);
     // document.body.innerHTML= 'hello';
-
-    console.log(document.body);
-    console.log(typeof document.body.innerHTML);
+    // console.log(document.body);
+    // console.log(typeof document.body.innerHTML);
   </script>
 </body>
 </html>
