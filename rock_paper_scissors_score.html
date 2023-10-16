@@ -92,6 +92,7 @@
         score.draw++;
       }
 
+      localStorage.setItem('score', JSON.stringify(score));
       alert(`Your move was ${playerMove}! Player 2 chose ${compMove}.\n${result}\nWins: ${score.win} Loses:${score.lose} Draws:${score.draw}`);
     }
 
