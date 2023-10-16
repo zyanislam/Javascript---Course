@@ -7,7 +7,7 @@
 </head>
 <body>
   <h2>Objects Page</h2>
-  
+
   <script>
     const product = {
       name: 'socks',
@@ -33,6 +33,12 @@
 
     console.log(obj1.message);
     console.log(obj2.message);
+
+    const obj3 = {
+      message: 'hello'
+    };
+
+    console.log(obj1 === obj3); //false because objects are just references
   </script>
 </body>
 </html>
