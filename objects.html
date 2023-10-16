@@ -22,6 +22,17 @@
     console.log(product);
     console.log(JSON.stringify(product));
 
+    const obj1 = {
+      message: 'hello'
+    };
+    
+    const obj2 = obj1;
+    console.log(obj1.message);
+    obj1.message = 'Good job!';
+
+    console.log(obj1.message);
+    console.log(obj2.message);
+
   </script>
 </body>
 </html>
