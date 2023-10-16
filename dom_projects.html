@@ -45,8 +45,18 @@
 
     function calculateTotal(){
       const inputField = document.querySelector('.inputValue');
-      console.log(inputField.value);
+      let cost = inputField.value;
+      console.log(typeof cost);
+      if(cost <= 40){
+        cost = cost + 10;
+        console.log(cost);
+      }
+      else{
+        console.log(cost);
+      }
 
+      document.querySelector('.costView')
+      .innerHTML = `Your total cost is ${cost}.`;
     }
   </script>
 </body>
