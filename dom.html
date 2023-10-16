@@ -8,10 +8,12 @@
 <body>
   <h2>DOM Page</h2>
   <button>Hello</button>
-  <button>Check</button>
+  <button class="second_button">Check</button>
   <script>
     console.log(document.querySelector('button'));
     document.querySelector('button').innerHTML = 'Changed';
+
+    document.querySelector('.second_button')
     // console.log(document);
     // document.body.innerHTML= 'hello';
     // console.log(document.body);
