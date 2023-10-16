@@ -26,6 +26,9 @@
     playGame('Scissors');
   ">Scissors</button>
 
+  <p class="movesMade"></p>
+  <h4 class="resultView"></h4>
+  <br>
   <p class="scoreText"></p>
 
   <button onclick="
@@ -48,6 +51,9 @@
     }
 
     updateScore();
+    showMoves();
+    showResult();
+    
 
     function playGame(playerMove){
       const compMove = pickCompMove();
@@ -91,7 +97,6 @@
         }
       }
 
-
       if(result === 'Congrats, You Win!'){
         score.win++;
       }
@@ -102,15 +107,31 @@
         score.draw++;
       }
 
+
       localStorage.setItem('score', JSON.stringify(score));
       updateScore();
+      showMoves(playerMove, compMove);
+      showResult(result);
 
       // alert(`Your move was ${playerMove}! Player 2 chose ${compMove}.\n${result}\nWins: ${score.win} Loses:${score.lose} Draws:${score.draw}`);
     }
 
+
     function updateScore(){
       document.querySelector('.scoreText')
       .innerHTML = `Wins: ${score.win} Loses:${score.lose} Draws:${score.draw}`;
+    }
+
+    function showMoves(playerMove, compMove){
+      document.querySelector('.movesMade')
+      .innerHTML = `Your move was ${playerMove}! Computer chose ${compMove}`;
+      console.log('showMoves');
+    }
+
+    function showResult(result){
+      document.querySelector('.resultView')
+      .innerHTML = `${result}`;
+      console.log('showResult');
     }
 
     function pickCompMove(){
