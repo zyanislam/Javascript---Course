@@ -32,7 +32,7 @@
     "
       console.log(event.key);
       if(event.key === 'Enter'){
-        console.log('he');
+        calculateTotal()
       }
     "
   >
@@ -56,8 +56,9 @@
 
     function calculateTotal(){
       const inputField = document.querySelector('.inputValue');
+      console.log(inputField.value);
       let cost = Number(inputField.value);
-      
+      console.log(typeof cost);
       if(cost < 40){
         cost = cost + 10;
       }
