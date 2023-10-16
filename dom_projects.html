@@ -24,9 +24,9 @@
   <p>Orders under <strong>$40</strong> = <strong>$10+</strong> for Shipping</p>
   <p>Orders over <strong>$40</strong> = Free Shipping</p>
 
-  <input class="inputValue" placeholder="Cost of Order">
+  <input class="inputValue" placeholder="Cost of Order" inputmode="numeric">
   <button onclick="
-    document.
+    calculateTotal();
     ">
     Calculate Cost
   </button>
@@ -43,6 +43,11 @@
       }
     }
 
+    function calculateTotal(){
+      const inputField = document.querySelector('.inputValue');
+      console.log(inputField.value);
+
+    }
   </script>
 </body>
 </html>
