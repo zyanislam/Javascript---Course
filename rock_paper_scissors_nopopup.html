@@ -28,7 +28,6 @@
 
   <p class="movesMade"></p>
   <h4 class="resultView"></h4>
-  <br>
   <p class="scoreText"></p>
 
   <button onclick="
@@ -37,6 +36,8 @@
     score.draw = 0;
     localStorage.removeItem('score')
     updateScore();
+    document.querySelector('.movesMade')
+    .innerHTML = '';
   ">Reset Score</button>
 
   <script>
@@ -51,9 +52,7 @@
     }
 
     updateScore();
-    showMoves();
-    showResult();
-    
+
 
     function playGame(playerMove){
       const compMove = pickCompMove();
@@ -125,13 +124,11 @@
     function showMoves(playerMove, compMove){
       document.querySelector('.movesMade')
       .innerHTML = `Your move was ${playerMove}! Computer chose ${compMove}`;
-      console.log('showMoves');
     }
 
     function showResult(result){
       document.querySelector('.resultView')
       .innerHTML = `${result}`;
-      console.log('showResult');
     }
 
     function pickCompMove(){
