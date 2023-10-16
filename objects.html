@@ -41,11 +41,17 @@
     console.log(obj1 === obj3); //false because objects are just references
 
     const obj4 = {
-      message: 'This is inside obj4'
+      message: 'This is inside obj4',
+      by: 'Zyan'
     };
 
-    const message = obj4.message;
+    // const message = obj4.message;
+
+    // const { message } = obj4;
+    const { message, by } = obj4;
     console.log(message);
+    console.log(by);
+
 
   </script>
 </body>
