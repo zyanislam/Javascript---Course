@@ -13,7 +13,6 @@
     Let's play!
   </p>
   <br>
-  <br>
   <button onclick="
     playGame('Rock');
   ">Rock</button>
@@ -27,7 +26,7 @@
   ">Scissors</button>
 
   <p class="movesMade"></p>
-  <h4 class="resultView"></h4>
+  <h3 class="resultView"></h4>
   <p class="scoreText"></p>
 
   <button onclick="
@@ -52,7 +51,6 @@
         draw: 0
       }
     }
-
     updateScore();
 
 
@@ -123,15 +121,18 @@
       .innerHTML = `Wins: ${score.win} Loses:${score.lose} Draws:${score.draw}`;
     }
 
+
     function showMoves(playerMove, compMove){
       document.querySelector('.movesMade')
       .innerHTML = `Your move was ${playerMove}! Computer chose ${compMove}`;
     }
 
+
     function showResult(result){
       document.querySelector('.resultView')
       .innerHTML = `${result}`;
     }
+
 
     function pickCompMove(){
       const rNumber = Math.round(Math.random()*10);
