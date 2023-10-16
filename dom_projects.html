@@ -9,13 +9,7 @@
   <h2>DOM Project Page</h2>
   <p>Youtube Subscribe Button</p>
   <button class="subButton" onclick="
-    const button1 = document.querySelector('.subButton');
-    if(button1.innerText === 'Subscribe'){
-      button1.innerText = 'Subscribed';
-    }
-    else{
-      button1.innerText = 'Subscribe';
-    }
+    changeText();
     ">
     Subscribe
   </button>
@@ -30,7 +24,15 @@
   <p>Orders over $40 = Free Shipping</p>
 
   <script>
-
+    function changeText(){
+      const button1 = document.querySelector('.subButton');
+      if(button1.innerText === 'Subscribe'){
+        button1.innerText = 'Subscribed';
+      }
+      else{
+        button1.innerText = 'Subscribe';
+      }
+    }
   </script>
 </body>
 </html>
