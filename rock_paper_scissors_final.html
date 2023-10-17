@@ -9,6 +9,11 @@
       color: white;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1.2em;
+      text-align: center;
+    }
+
+    .spaceDiv{
+      margin-bottom: 100px;
     }
 
     .image{
@@ -39,11 +44,14 @@
       Rock Paper Scissors Game
     </h2>
 
+    <div class="spaceDiv">
+
+    </div>
+
     <h3>
       Let's play!
     </h3>
 
-    <br>
 
     <div>
       <img class="image" src="images/rock.png" alt="Rock" onclick="
@@ -55,6 +63,10 @@
       <img class="image" src="images/scissors.png" alt="Scissors" onclick="
         playGame('Scissors');
       ">
+    </div>
+
+    <div class="spaceDiv">
+      
     </div>
 
     <p class="movesMade"></p>
@@ -74,7 +86,7 @@
     ">Reset Score</button>
     <br>
     <br>
-    <a href="http://127.0.0.1:5500/dom_projects.html">Go back</a>
+    <a href="http://127.0.0.1:5500/dom_projects_withCSS.html">Go back</a>
 
     <script>
       let score = JSON.parse(localStorage.getItem('score'));
