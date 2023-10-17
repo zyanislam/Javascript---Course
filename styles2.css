@@ -3,9 +3,8 @@
     border: none;
     border-radius: 25px;
     background-color: rgb(175, 175, 175);
-    width: 8em;
-    height: 2em;
     font-size: 1.1em;
+    padding: 10px 25px;
 }
 
 .subButton:hover{
