@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles3.css">
 
-    <title>Rock Paper Scissors</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles3.css">
 
-  </head>
-  <body>
-    <p class="title">
-      Rock Paper Scissors Game
-    </p>
+  <title>Rock Paper Scissors</title>
 
-    <hr>
+</head>
 
-    <div class="spaceDiv">
+<body>
+  <p class="title">
+    Rock Paper Scissors Game
+  </p>
 
-    </div>
+  <hr>
 
-    <h3>
-      Let's play!
-    </h3>
+  <div class="spaceDiv">
 
-    <br>
+  </div>
 
-    <div>
-      <img class="image" src="images/rock.png" alt="Rock" onclick="
+  <h3>
+    Let's play!
+  </h3>
+
+  <br>
+
+  <div>
+    <img class="image" src="images/rock.png" alt="Rock" onclick="
         playGame('Rock');
       ">
-      <img class="image" src="images/paper.png" alt="Paper" onclick="
+    <img class="image" src="images/paper.png" alt="Paper" onclick="
         playGame('Paper');
       ">
-      <img class="image" src="images/scissors.png" alt="Scissors" onclick="
+    <img class="image" src="images/scissors.png" alt="Scissors" onclick="
         playGame('Scissors');
       ">
-    </div>
+  </div>
 
-    <div class="spaceDiv">
-      
-    </div>
+  <div class="spaceDiv">
 
-    <p class="movesMade">
-      <!-- Your chose <img class="imagebox" src="images/paper.png"> <img class="imagebox" src="images/rock.png"> Comp chose -->
-    </p>
-    <h3 class="resultView"></h4>
+  </div>
+
+  <p class="movesMade">
+    <!-- Your chose <img class="imagebox" src="images/paper.png"> <img class="imagebox" src="images/rock.png"> Comp chose -->
+  </p>
+  <h3 class="resultView">
+    </h4>
     <p class="scoreText"></p>
 
     <button class="reset" onclick="
@@ -64,8 +67,8 @@
 
     <script>
       let score = JSON.parse(localStorage.getItem('score'));
-      
-      if(!score){
+
+      if (!score) {
         score = {
           win: 0,
           lose: 0,
@@ -75,55 +78,42 @@
       updateScore();
 
 
-      function playGame(playerMove){
+      function playGame(playerMove) {
         const compMove = pickCompMove();
 
         let result = '';
 
-        if(playerMove === 'Rock')
-        {
-          if(compMove === 'Rock'){
+        if (playerMove === 'Rock') {
+          if (compMove === 'Rock') {
             result = 'It\'s a Draw!';
-          }
-          else if(compMove === 'Paper'){
+          } else if (compMove === 'Paper') {
             result = 'Sorry, You Lose!';
-          }
-          else if(compMove === 'Scissors'){
+          } else if (compMove === 'Scissors') {
             result = 'Congrats, You Win!';
           }
-        }
-
-        else if(playerMove === 'Paper')
-        {
-          if(compMove === 'Rock'){
+        } else if (playerMove === 'Paper') {
+          if (compMove === 'Rock') {
             result = 'Congrats, You Win!';
-          }
-          else if(compMove === 'Paper'){
+          } else if (compMove === 'Paper') {
             result = 'It\'s a Draw!';
-          }
-          else if(compMove === 'Scissors'){
+          } else if (compMove === 'Scissors') {
             result = 'Sorry, You Lose!';
           }
-        }
-        else if(playerMove === 'Scissors'){
-          if(compMove === 'Rock'){
+        } else if (playerMove === 'Scissors') {
+          if (compMove === 'Rock') {
             result = 'Sorry, You Lose!';
-          }
-          else if(compMove === 'Paper'){
+          } else if (compMove === 'Paper') {
             result = 'Congrats, You Win!';
-          }
-          else if(compMove === 'Scissors'){
+          } else if (compMove === 'Scissors') {
             result = 'It\'s a Draw!';
           }
         }
 
-        if(result === 'Congrats, You Win!'){
+        if (result === 'Congrats, You Win!') {
           score.win++;
-        }
-        else if(result === 'Sorry, You Lose!'){
+        } else if (result === 'Sorry, You Lose!') {
           score.lose++;
-        }
-        else if(result === 'It\'s a Draw!'){
+        } else if (result === 'It\'s a Draw!') {
           score.draw++;
         }
 
@@ -137,40 +127,39 @@
       }
 
 
-      function updateScore(){
+      function updateScore() {
         document.querySelector('.scoreText')
-        .innerHTML = `Wins: ${score.win} Loses:${score.lose} Draws:${score.draw}`;
+          .innerHTML = `Wins: ${score.win} Loses:${score.lose} Draws:${score.draw}`;
       }
 
 
-      function showMoves(playerMove, compMove){
+      function showMoves(playerMove, compMove) {
         document.querySelector('.movesMade')
-        .innerHTML = `Your chose <img class="imagebox" src="images/${playerMove}.png"> <img class="imagebox" src="images/${compMove}.png"> Comp chose`;
+          .innerHTML =
+          `Your chose <img class="imagebox" src="images/${playerMove}.png"> <img class="imagebox" src="images/${compMove}.png"> Comp chose`;
       }
 
 
-      function showResult(result){
+      function showResult(result) {
         document.querySelector('.resultView')
-        .innerHTML = `${result}`;
+          .innerHTML = `${result}`;
       }
 
 
-      function pickCompMove(){
-        const rNumber = Math.round(Math.random()*10);
+      function pickCompMove() {
+        const rNumber = Math.round(Math.random() * 10);
         let compMove = '';
 
-        if(rNumber <= 3){
+        if (rNumber <= 3) {
           compMove = 'Rock';
-        }
-        else if(rNumber > 3 && rNumber <= 6){
+        } else if (rNumber > 3 && rNumber <= 6) {
           compMove = 'Paper';
-        }
-        else{
+        } else {
           compMove = 'Scissors';
         }
         return compMove;
       }
-
     </script>
-  </body>
+</body>
+
 </html>
