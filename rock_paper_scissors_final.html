@@ -10,158 +10,164 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 1.2em;
     }
+
+    .image{
+      width:15%;
+      cursor: pointer;
+      padding: 10px;
+    }
   </style>
 
   <title>Rock Paper Scissors</title>
 </head>
-<body>
-  <h2>
-    Rock Paper Scissors Game
-  </h2>
-  <h3>
-    Let's play!
-  </h3>
-  <br>
-  <button onclick="
-    playGame('Rock');
-  ">Rock</button>
+  <body>
+    <h2>
+      Rock Paper Scissors Game
+    </h2>
+    <h3>
+      Let's play!
+    </h3>
+    <br>
+    <div>
+      <img class="image" src="images/rock.png" alt="Rock" onclick="
+        playGame('Rock');
+      ">
+      <img class="image" src="images/paper.png" alt="Paper" onclick="
+        playGame('Paper');
+      ">
+      <img class="image" src="images/scissors.png" alt="Scissors" onclick="
+        playGame('Scissors');
+      ">
+    </div>
 
-  <button onclick="
-    playGame('Paper');
-  ">Paper</button>
-  
-  <button onclick="
-    playGame('Scissors');
-  ">Scissors</button>
+    <p class="movesMade"></p>
+    <h3 class="resultView"></h4>
+    <p class="scoreText"></p>
 
-  <p class="movesMade"></p>
-  <h3 class="resultView"></h4>
-  <p class="scoreText"></p>
-
-  <button onclick="
-    score.win = 0;
-    score.lose = 0;
-    score.draw = 0;
-    localStorage.removeItem('score')
-    updateScore();
-    document.querySelector('.movesMade')
-    .innerHTML = '';
-    document.querySelector('.resultView')
-    .innerHTML = '';
-  ">Reset Score</button>
-  <br>
-  <br>
-  <a href="http://127.0.0.1:5500/dom_projects.html">Go back</a>
-
-  <script>
-    let score = JSON.parse(localStorage.getItem('score'));
-    
-    if(!score){
-      score = {
-        win: 0,
-        lose: 0,
-        draw: 0
-      }
-    }
-    updateScore();
-
-
-    function playGame(playerMove){
-      const compMove = pickCompMove();
-
-      let result = '';
-
-      if(playerMove === 'Rock')
-      {
-        if(compMove === 'Rock'){
-          result = 'It\'s a Draw!';
-        }
-        else if(compMove === 'Paper'){
-          result = 'Sorry, You Lose!';
-        }
-        else if(compMove === 'Scissors'){
-          result = 'Congrats, You Win!';
-        }
-      }
-
-      else if(playerMove === 'Paper')
-      {
-        if(compMove === 'Rock'){
-          result = 'Congrats, You Win!';
-        }
-        else if(compMove === 'Paper'){
-          result = 'It\'s a Draw!';
-        }
-        else if(compMove === 'Scissors'){
-          result = 'Sorry, You Lose!';
-        }
-      }
-      else if(playerMove === 'Scissors'){
-        if(compMove === 'Rock'){
-          result = 'Sorry, You Lose!';
-        }
-        else if(compMove === 'Paper'){
-          result = 'Congrats, You Win!';
-        }
-        else if(compMove === 'Scissors'){
-          result = 'It\'s a Draw!';
-        }
-      }
-
-      if(result === 'Congrats, You Win!'){
-        score.win++;
-      }
-      else if(result === 'Sorry, You Lose!'){
-        score.lose++;
-      }
-      else if(result === 'It\'s a Draw!'){
-        score.draw++;
-      }
-
-
-      localStorage.setItem('score', JSON.stringify(score));
+    <button onclick="
+      score.win = 0;
+      score.lose = 0;
+      score.draw = 0;
+      localStorage.removeItem('score')
       updateScore();
-      showMoves(playerMove, compMove);
-      showResult(result);
-
-      // alert(`Your move was ${playerMove}! Player 2 chose ${compMove}.\n${result}\nWins: ${score.win} Loses:${score.lose} Draws:${score.draw}`);
-    }
-
-
-    function updateScore(){
-      document.querySelector('.scoreText')
-      .innerHTML = `Wins: ${score.win} Loses:${score.lose} Draws:${score.draw}`;
-    }
-
-
-    function showMoves(playerMove, compMove){
       document.querySelector('.movesMade')
-      .innerHTML = `Your move was ${playerMove}! Computer chose ${compMove}`;
-    }
-
-
-    function showResult(result){
+      .innerHTML = '';
       document.querySelector('.resultView')
-      .innerHTML = `${result}`;
-    }
+      .innerHTML = '';
+    ">Reset Score</button>
+    <br>
+    <br>
+    <a href="http://127.0.0.1:5500/dom_projects.html">Go back</a>
 
-
-    function pickCompMove(){
-      const rNumber = Math.round(Math.random()*10);
-      let compMove = '';
-
-      if(rNumber <= 3){
-        compMove = 'Rock';
+    <script>
+      let score = JSON.parse(localStorage.getItem('score'));
+      
+      if(!score){
+        score = {
+          win: 0,
+          lose: 0,
+          draw: 0
+        }
       }
-      else if(rNumber > 3 && rNumber <= 6){
-        compMove = 'Paper';
-      }
-      else{
-        compMove = 'Scissors';
-      }
-      return compMove;
-    }
+      updateScore();
 
-  </script>
-</body>
+
+      function playGame(playerMove){
+        const compMove = pickCompMove();
+
+        let result = '';
+
+        if(playerMove === 'Rock')
+        {
+          if(compMove === 'Rock'){
+            result = 'It\'s a Draw!';
+          }
+          else if(compMove === 'Paper'){
+            result = 'Sorry, You Lose!';
+          }
+          else if(compMove === 'Scissors'){
+            result = 'Congrats, You Win!';
+          }
+        }
+
+        else if(playerMove === 'Paper')
+        {
+          if(compMove === 'Rock'){
+            result = 'Congrats, You Win!';
+          }
+          else if(compMove === 'Paper'){
+            result = 'It\'s a Draw!';
+          }
+          else if(compMove === 'Scissors'){
+            result = 'Sorry, You Lose!';
+          }
+        }
+        else if(playerMove === 'Scissors'){
+          if(compMove === 'Rock'){
+            result = 'Sorry, You Lose!';
+          }
+          else if(compMove === 'Paper'){
+            result = 'Congrats, You Win!';
+          }
+          else if(compMove === 'Scissors'){
+            result = 'It\'s a Draw!';
+          }
+        }
+
+        if(result === 'Congrats, You Win!'){
+          score.win++;
+        }
+        else if(result === 'Sorry, You Lose!'){
+          score.lose++;
+        }
+        else if(result === 'It\'s a Draw!'){
+          score.draw++;
+        }
+
+
+        localStorage.setItem('score', JSON.stringify(score));
+        updateScore();
+        showMoves(playerMove, compMove);
+        showResult(result);
+
+        // alert(`Your move was ${playerMove}! Player 2 chose ${compMove}.\n${result}\nWins: ${score.win} Loses:${score.lose} Draws:${score.draw}`);
+      }
+
+
+      function updateScore(){
+        document.querySelector('.scoreText')
+        .innerHTML = `Wins: ${score.win} Loses:${score.lose} Draws:${score.draw}`;
+      }
+
+
+      function showMoves(playerMove, compMove){
+        document.querySelector('.movesMade')
+        .innerHTML = `Your move was ${playerMove}! Computer chose ${compMove}`;
+      }
+
+
+      function showResult(result){
+        document.querySelector('.resultView')
+        .innerHTML = `${result}`;
+      }
+
+
+      function pickCompMove(){
+        const rNumber = Math.round(Math.random()*10);
+        let compMove = '';
+
+        if(rNumber <= 3){
+          compMove = 'Rock';
+        }
+        else if(rNumber > 3 && rNumber <= 6){
+          compMove = 'Paper';
+        }
+        else{
+          compMove = 'Scissors';
+        }
+        return compMove;
+      }
+
+    </script>
+  </body>
 </html>
