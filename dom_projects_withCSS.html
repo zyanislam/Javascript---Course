@@ -6,7 +6,7 @@
   <!-- <link rel="stylesheet" href="styles2.css"> -->
   <title>DOM Project Page</title>
   <style>
-    .subButton{
+    .subscribe{
       color: rgb(255, 255, 255);
       border: none;
       border-radius: 25px;
@@ -17,7 +17,7 @@
       cursor: pointer;
     }
 
-    .subButton:hover{
+    .subscribe:hover{
       background-color: rgb(29, 29, 29);
     }
   </style>
@@ -25,7 +25,7 @@
 <body>
   <h1>DOM Project Page</h1>
   <h3>Youtube Subscribe Button</h3>
-  <button class="subButton" onclick="
+  <button class="subscribe" onclick="
     changeText();
     ">
     Subscribe
@@ -57,9 +57,10 @@
 
   <script>
     function changeText(){
-      const button1 = document.querySelector('.subButton');
+      const button1 = document.querySelector('.subscribe');
       if(button1.innerText === 'Subscribe'){
         button1.innerText = 'Subscribed';
+        button1.classList.add('.subscribed'); ;
       }
       else{
         button1.innerText = 'Subscribe';
