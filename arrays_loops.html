@@ -10,14 +10,30 @@
 </head>
 
 <body>
+    <p class="title">
+        To-Do List
+    </p>
+
+    <input class="inputField" type="text">
+    <button class="add" placeholder="Enter your task on hand!" onclick="
+        addItem();
+    ">Add Item</button>
 
     <script>
-        const myArray = [1, 2, 3, 4];
-        console.log(myArray);
-        // console.log(myArray.length);
-        myArray.push(5);
-        for (var i = 0; i < myArray.length; i++) {
-            console.log(myArray[i]);
+        // const myArray = [1, 2, 3, 4];
+        // console.log(myArray);
+        // // console.log(myArray.length);
+        // myArray.push(5);
+        // for (var i = 0; i < myArray.length; i++) {
+        //     console.log(myArray[i]);
+        // }
+        const itemArray = [];
+
+        function addItem() {
+            const inputF = document.querySelector('.inputField');
+            let item = inputF.value;
+            itemArray.push(item);
+            console.log(itemArray);
         }
     </script>
 </body>
