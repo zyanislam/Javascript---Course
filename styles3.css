@@ -48,3 +48,7 @@ hr {
 .reset:hover {
     background-color: rgb(255, 200, 48);
 }
+
+.goback {
+    color: rgb(255, 255, 255);
+}
