@@ -16,6 +16,20 @@
       cursor: pointer;
       padding: 10px;
     }
+
+    .reset{
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 25px;
+      background-color: rgb(255, 191, 13);
+      font-size: 1em;
+      padding: 10px 25px;
+      cursor: pointer;
+    }
+
+    .reset:hover{
+      background-color: rgb(255, 200, 48);
+    }
   </style>
 
   <title>Rock Paper Scissors</title>
@@ -24,10 +38,13 @@
     <h2>
       Rock Paper Scissors Game
     </h2>
+
     <h3>
       Let's play!
     </h3>
+
     <br>
+
     <div>
       <img class="image" src="images/rock.png" alt="Rock" onclick="
         playGame('Rock');
@@ -44,7 +61,7 @@
     <h3 class="resultView"></h4>
     <p class="scoreText"></p>
 
-    <button onclick="
+    <button class="reset" onclick="
       score.win = 0;
       score.lose = 0;
       score.draw = 0;
