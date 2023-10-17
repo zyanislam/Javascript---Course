@@ -1,7 +1,13 @@
 .subButton{
     color: rgb(255, 255, 255);
-    border-radius: 3px;
-    background-color: rgb(151, 151, 151);
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(175, 175, 175);
     width: 8em;
-    border: 1px solid rgb(151, 151, 151);
+    height: 2em;
+    font-size: 1.1em;
+}
+
+.subButton:hover{
+    background-color: rgb(29, 29, 29);
 }
