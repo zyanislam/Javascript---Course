@@ -16,14 +16,23 @@
       margin-bottom: 70px;
     }
 
-    .line{
-      border-top: 1px solid white;
+    hr{
+      margin-bottom: 20px;
+    }
+
+    .title{
+      font-size: 30px;
+      font-weight: bold;
     }
 
     .image{
       width:14%;
       cursor: pointer;
-      padding: 10px;
+      margin: 10px;
+      background-color: transparent;
+    }
+    .imagebox{
+      width:5%;
     }
 
     .scoreText{
@@ -50,11 +59,11 @@
   <title>Rock Paper Scissors</title>
 </head>
   <body>
-    <h1>
+    <p class="title">
       Rock Paper Scissors Game
-    </h1>
+    </p>
 
-    <div class="line"></div>
+    <hr>
 
     <div class="spaceDiv">
 
@@ -82,7 +91,9 @@
       
     </div>
 
-    <p class="movesMade"></p>
+    <p class="movesMade">
+      <!-- Your chose <img class="imagebox" src="images/paper.png"> <img class="imagebox" src="images/rock.png"> Comp chose -->
+    </p>
     <h3 class="resultView"></h4>
     <p class="scoreText"></p>
 
@@ -184,7 +195,7 @@
 
       function showMoves(playerMove, compMove){
         document.querySelector('.movesMade')
-        .innerHTML = `Your move was ${playerMove}! Computer chose ${compMove}`;
+        .innerHTML = `Your chose <img class="imagebox" src="images/${playerMove}.png"> <img class="imagebox" src="images/${compMove}.png"> Comp chose`;
       }
 
 
