@@ -10,7 +10,7 @@
       color: rgb(255, 255, 255);
       border: none;
       border-radius: 25px;
-      background-color: rgb(175, 175, 175);
+      background-color: rgb(76, 76, 76);
       font-size: 1em;
       font-weight: bold;
       padding: 10px 25px;
@@ -18,7 +18,16 @@
     }
 
     .subscribe:hover{
-      background-color: rgb(29, 29, 29);
+      background-color: rgb(233, 11, 11);
+    }
+
+    .subscribed{
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      font-size: 1em;
+      font-weight: bold;
+      padding: 10px 25px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -60,10 +69,11 @@
       const button1 = document.querySelector('.subscribe');
       if(button1.innerText === 'Subscribe'){
         button1.innerText = 'Subscribed';
-        button1.classList.add('.subscribed'); ;
+        button1.classList.add('subscribed');
       }
       else{
         button1.innerText = 'Subscribe';
+        button1.classList.add('subscribe');
       }
     }
 
