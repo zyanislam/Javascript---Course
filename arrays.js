@@ -18,7 +18,6 @@ function addItem2() {
 
     let item = inputF.value;
     itemArray2.push(item);
-    console.log(itemArray2);
     inputF.value = '';
 }
 
@@ -30,8 +29,6 @@ function showItem(){
         itemHTML += code;
         i++;
     }
-
-    console.log(itemHTML);
     items.innerHTML = `${itemHTML}`;
 
 }
