@@ -2,8 +2,8 @@ const itemArray1 = [];
 const itemArray2 = [];
 const itemArray3 = [];
 const itemArrayDate = [];
-
 let i = 0;
+
 let itemHTML = '';
 let itemHTML2 = '';
 
@@ -48,19 +48,31 @@ function addItem3() {
     let date = inputDate.value;
     itemArrayDate.push(date);
     inputDate.value = '';
+    showItem2();
 }
+
+
 
 function showItem2(){
     const items = document.querySelector('.itemContainer2');
 
-    while(i != itemArray3.length){
+    for(i ; i < itemArray3.length; i++){
         const code = `<div class="rowDiv">
-        <p class="iField1">Task No ${i+1}: ${itemArray3[i]}</p> <p class="iField1">${itemArrayDate[i]}</p> <button class="deleteButton">Delete</button>
+        <p class="iField1">Task No ${i+1}: ${itemArray3[i]}</p> <p class="iField1">${itemArrayDate[i]}</p> <button class="deleteButton" onclick="deleteItem(${i});">Delete</button>
         </div>`;
         itemHTML2 += code;
-        i++;
+        // console.log(code);
+        console.log(itemArray3);
+        console.log(itemArrayDate);
     }
+
     items.innerHTML = `${itemHTML2}`;
+}
 
-
+function deleteItem(i){
+    itemArray3.splice(i, 1);
+    itemArrayDate.splice(i, 1);
+    console.log(itemArray3);
+    console.log(itemArrayDate);
+    showItem2();
 }
