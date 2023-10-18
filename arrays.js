@@ -55,7 +55,7 @@ function showItem2(){
 
     while(i != itemArray3.length){
         const code = `<div class="rowDiv">
-        <p class="iField1">Task No ${i+1}: ${itemArray3[i]}</p> <p class="iField1">${itemArrayDate[i]}</p>
+        <p class="iField1">Task No ${i+1}: ${itemArray3[i]}</p> <p class="iField1">${itemArrayDate[i]}</p> <button class="deleteButton">Delete</button>
         </div>`;
         itemHTML2 += code;
         i++;
