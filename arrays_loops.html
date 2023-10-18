@@ -5,6 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="styles2.css"> -->
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .title3{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .addButton {
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 25px;
+            background-color: rgb(0, 0, 0);
+            padding: 7px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .addButton:hover {
+            background-color: rgb(255, 182, 25);
+        }
+
+        .inputField3 {
+            color: black;
+            border-radius: 25px;
+            padding: 10px 15px;
+            width: 15em;
+        }
+
+        .iField1{
+            border: 1px solid black;
+            width: 50%;
+            max-width: 15em;
+            padding: 10px 5px;
+            margin: 20px 5px;
+        }
+    </style>
     <title>Arrays & Loops</title>
 
 </head>
@@ -26,10 +63,22 @@
     <input class="inputField2" placeholder="Enter your task on hand!" type="text">
     <button class="add" onclick="
         addItem2();
-        showItem();
+        showItem1();
     ">Add Item</button>
 
-    <div class="itemContainer"></div>
+    <div class="itemContainer1"></div>
+
+    <p class="title3">
+        To-Do List Final
+    </p>
+
+    <input class="inputField3" placeholder="Enter your task on hand!" type="text">
+    <button class="addButton" onclick="
+        addItem3();
+        showItem2();
+    ">Add Item</button>
+
+    <div class="itemContainer2"></div>
 
     <script src="arrays.js">
 
