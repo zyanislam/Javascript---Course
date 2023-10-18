@@ -1,6 +1,8 @@
 const itemArray1 = [];
 const itemArray2 = [];
 const itemArray3 = [];
+const itemArrayDate = [];
+
 let i = 0;
 let itemHTML = '';
 let itemHTML2 = '';
@@ -23,14 +25,6 @@ function addItem2() {
     inputF.value = '';
 }
 
-function addItem3() {
-    const inputF = document.querySelector('.inputField3');
-
-    let item = inputF.value;
-    itemArray3.push(item);
-    inputF.value = '';
-}
-
 function showItem1(){
     const items = document.querySelector('.itemContainer1');
 
@@ -43,11 +37,24 @@ function showItem1(){
 
 }
 
+function addItem3() {
+    const inputF = document.querySelector('.inputField3');
+    const inputDate = document.querySelector('.inputField4');
+
+    let item = inputF.value;
+    itemArray3.push(item);
+    inputF.value = '';
+
+    let date = inputDate.value;
+    itemArrayDate.push(date);
+    inputDate.value = '';
+}
+
 function showItem2(){
     const items = document.querySelector('.itemContainer2');
 
     while(i != itemArray3.length){
-        const code = `<p class="iField1">Task No ${i+1}: ${itemArray3[i]}</p> <input class="iField2" type=""></input>`;
+        const code = `<p class="iField1">Task No ${i+1}: ${itemArray3[i]}</p>`;
         itemHTML2 += code;
         i++;
     }
