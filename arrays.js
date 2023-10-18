@@ -54,7 +54,9 @@ function showItem2(){
     const items = document.querySelector('.itemContainer2');
 
     while(i != itemArray3.length){
-        const code = `<p class="iField1">Task No ${i+1}: ${itemArray3[i]}</p>`;
+        const code = `<div class="rowDiv">
+        <p class="iField1">Task No ${i+1}: ${itemArray3[i]}</p> <p class="iField1">${itemArrayDate[i]}</p>
+        </div>`;
         itemHTML2 += code;
         i++;
     }
