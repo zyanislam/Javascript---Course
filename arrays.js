@@ -2,6 +2,8 @@ const itemArray1 = [];
 const itemArray2 = [];
 let i = 0;
 
+let itemHTML = '';
+
 function addItem1() {
     const inputF = document.querySelector('.inputField1');
 
@@ -22,10 +24,14 @@ function addItem2() {
 
 function showItem(){
     const items = document.querySelector('.itemContainer');
+
     while(i != itemArray2.length){
-        console.log(itemArray2);
-        items.innerHTML = `Item No ${i+1}: ${itemArray2[i]}`;
+        const code = `<p>Task No ${i+1}: ${itemArray2[i]}</p>`;
+        itemHTML += code;
         i++;
     }
+
+    console.log(itemHTML);
+    items.innerHTML = `${itemHTML}`;
 
 }
